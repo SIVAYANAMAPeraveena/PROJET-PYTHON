@@ -1,0 +1,412 @@
+/* STYLES GLOBAUX DU WEBAPP*/
+:root {
+  --white:#ffffff;
+  --beige:#ebe1d6;
+  --brown:#5c4329;
+}
+html, body {
+  background-color: var(--white);
+  color: var(--brown);
+  font-family: "Open Sans", sans-serif;
+}
+h1, h2, h3, h4 {
+  color: var(--brown);
+}
+.hero {
+  background-color: var(--beige);
+  padding: 3rem 2rem;
+  border-radius: 16px;
+  text-align: center;
+  color: var(--brown);
+  margin-top: 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.section {
+  background-color: var(--white);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-top: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.cta {
+  background-color: var(--brown);
+  color: var(--beige);
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  transition: all 0.25s ease;
+}
+.cta:hover {
+  background-color: var(--white);
+  color: var(--brown);
+  border: 1px solid var(--brown);
+}
+/* ----- Global ----- */
+body {
+    background-color: white;
+    font-family: 'Poppins', sans-serif;
+    color: black;
+}
+/* ---------- HEADER / NAVIGATION ---------- */
+
+.nav-header {
+  background-color: var(--white);
+  border-bottom: 2px solid var(--beige);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 2rem;
+}
+
+.nav-logo img {
+  height: 45px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--brown);
+}
+
+.nav-link {
+  color: var(--brown);
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: var(--beige);
+}
+
+.user-btn {
+  background-color: var(--brown);
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.user-btn:hover {
+  background-color: var(--beige);
+}
+
+.user-btn:hover span {
+  color: var(--brown);
+}
+
+.user-btn span {
+  color: var(--white);
+  font-size: 18px;
+}
+:root {
+  --white: #ffffff;
+  --beige: #ebe1d6;
+  --brown: #5c4329;
+}
+
+html, body {
+  background-color: var(--white);
+  color: var(--brown);
+  font-family: "Open Sans", sans-serif;
+}
+
+h1, h2, h3, h4 {
+  color: var(--brown);
+}
+
+.hero {
+  background-color: var(--beige);
+  padding: 3rem 2rem;
+  border-radius: 16px;
+  text-align: center;
+  color: var(--brown);
+  margin-top: 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.section {
+  background-color: var(--white);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-top: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.cta {
+  background-color: var(--brown);
+  color: var(--beige);
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  transition: all 0.25s ease;
+}
+.cta:hover {
+  background-color: var(--white);
+  color: var(--brown);
+  border: 1px solid var(--brown);
+}
+
+/* ----- Header ----- */
+.intro-text {
+    font-style: italic;
+    color: black;
+    font-size: 18px;
+    line-height: 1.7;
+    padding: 20px;
+}
+
+/* ----- Section Titles ----- */
+.section-title {
+    text-align: center;
+    color: black;
+    font-size: 30px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+/* ----- Buttons ----- */
+button[kind="primary"] {
+    background-color: var(--beige) !important;
+    border-radius: 10px !important;
+    font-weight: 600 !important;
+}
+
+/* ----- Carrousel ----- */
+img {
+    border-radius: 15px;
+    box-shadow: 0 4px 10px black;
+}
+
+/* ----- Footer ----- */
+footer {
+    text-align: center;
+    color: var(--brown);
+    font-size: 12px;
+    margin-top: 50px;
+}
+
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--beige);
+  border-bottom: 2px solid rgba(92,67,41,0.2);
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.logo img { height: 50px; }
+
+.menu { display: flex; gap: .5rem; justify-content: center; flex: 1; }
+
+.menu .stButton > button {
+  cursor: pointer;
+  color: var(--brown);
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  transition: all .2s ease;
+}
+.menu .stButton > button:hover { background-color: var(--brown); color: var(--beige); }
+.menu .active { background-color: var(--brown) !important; color: var(--beige) !important; }
+
+.mon-espace .stButton > button {
+  background-color: var(--brown);
+  color: var(--beige);
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  border: none;
+  transition: all .2s ease;
+}
+.mon-espace .stButton > button:hover {
+  background-color: var(--white);
+  color: var(--brown);
+  border: 1px solid var(--brown);
+}
+
+.big-button button {
+    padding: 14px 28px;
+    font-size: 18px;
+    background-color: var(--brown);
+    color: white;
+    border-radius: 12px;
+    border: none;
+    font-weight: bold;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--beige);
+    color: black;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    border-top: 1px solid #ebe1d6;
+}
+.footer a { color: var(--brown); text-decoration: none; font-weight: bold; }
+.footer a:hover { text-decoration: underline; }
+
+footer { visibility: hidden; }
+
+
+.spacer { height: 78px; }
+
+/* ====== BOÎTES DE CONTENU ====== */
+.bilan-box {
+  background-color: var(--beige);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  color: var(--brown);
+  font-weight: bold;
+  text-align: center;
+  max-width: 1000px;
+  margin: 2rem auto;
+}
+
+.chart-box {
+  background-color: #fffaf5;        
+  padding: 0.5rem 1rem;          
+  border-radius: 12px;           
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  margin-top: 0.5rem;            
+  margin-bottom: 0.5rem;         
+  text-align: center;            
+  max-height: 320px;             
+  overflow: hidden;              
+}
+
+/* ====== PROGRESSION ====== */
+.progress-bar {
+  width: 100%;
+  background-color: var(--white);
+  border-radius: 5px;
+  overflow: hidden;
+  height: 25px;
+  margin: rem 0 1.5rem 0;
+  border: 1px solid var(--brown);
+}
+.progress {
+  height: 100%;
+  width: 0%;
+  background-color: var(--brown);
+  color: var(--beige);
+  text-align: center;
+  font-weight: 400;
+  transition: width 0.6s ease;
+}
+
+/* ====== BADGES ====== */
+.badge-icon {
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid rgba(92,67,41,0.3);
+  margin: 2rem 0;
+}
+
+/* ===== PERSONNALISATION =====*/
+.quiz-container {
+  background-color: var(--beige);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  max-width: 900px;
+  margin: 2rem auto;
+  color: var(--brown);
+  animation: fadeIn 0.5s ease;
+}
+.question {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.result-box {
+  background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.calendar-box {
+  background: var(--beige);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin-top: 1rem;
+}
+.calendar-event {
+  background: var(--brown);
+  color: var(--beige);
+  border-radius: 8px;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.9rem;
+  margin: 2px;
+}
+
+/* ----- Page réservation ----- */
+h1 {
+    text-align: center;
+    color: var(--brown);
+}
+
+.stRadio > label {
+    font-weight: 500;
+}
+
+.stButton > button {
+    background-color: var(--brown) !important;
+    color: white !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    transition: 0.2s;
+}
+
+.stButton > button:hover {
+    background-color: var(--beige) !important;
+    transform: scale(1.02);
+}
+/* Ajustement marges après header */
+main {
+    margin-top: 2rem;
+}
+
+/* Style sur hover des liens */
+a.nav-link {
+    text-decoration: none;
+    color: #333;
+}
+a.nav-link:hover {
+    color: var(--brown);
+}
