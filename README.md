@@ -18,66 +18,53 @@
 
 ### 2. Espace Personnel Structuré
 
-| Onglet | Fonctionnalité Clé | Description |
+| Onglet | Fonctionnalité | Rôle Clé |
 | :--- | :--- | :--- |
-| **Réservations** | **Gestion des Rendez-vous & Calendrier** | Consultation du **calendrier** pour voir les rendez-vous réservés et gérer les futures réservations. |
-| **Bilan** | **Gestion du Scoring et Activités** | Permet d'**ajouter ou de retirer des activités** contribuant au bien-être, ce qui a un impact direct sur le **scoring** de l'utilisateur. |
-| **Scoring** | **Motivation par la Gamification** | Ce score augmente ou baisse selon les activités gérées dans l'onglet "Bilan". Son objectif est de motiver les efforts pour le bien-être personnel. |
-| **Personnalisation** | **Recommandation de Soins** | Questionnaire permettant de déterminer quel soin serait le plus bénéfique en fonction de l'humeur de l'utilisateur. |
-| **Soin / Tarifs** | **Information des Prix** | Présentation de l'ensemble des prestations et de leurs prix. Les tarifs sont **fixes**, quelle que soit la région du spa. |
-| **Contacts** | **Support et Communication** | Accès aux coordonnées de l'équipe Minerals. |
-| **À Propos** | **Présentation du Projet** | Informations complémentaires sur la création de l'application. |
+| **Réservations** | Calendrier des Rendez-vous | Permet de consulter, gérer et annuler les réservations. Utilise la fonction `afficher_reservation()` et intègre le calendrier (`streamlit_calendar`). |
+| **Bilan** | Gestion des Activités de Bien-être | Permet d’ajouter, suivre et cocher les activités du jour. Utilise la fonction `add_event()` pour enregistrer les activités et mettre à jour le score. |
+| **Scoring** | Motivation par la Gamification | Calcul et affichage du score de bien-être en temps réel basé sur les activités accomplies et les réservations. Utilise `calculer_score_bien_etre()` et les graphiques matplotlib. |
+| **Personnalisation** | Recommandation de Soins | Questionnaire interactif pour déterminer le soin idéal selon l’utilisateur. Utilise la fonction `get_recommendation()`. |
+| **Soin / Tarifs** | Transparence des Prix | Affiche tous les soins disponibles et leurs prix fixes pour chaque institut. Utilise simplement des dictionnaires et st.markdown pour la présentation. |
+| **Mes Informations** | Profil Utilisateur | Affiche les informations personnelles (nom, email, username) stockées dans `st.session_state.users`. |
+| **Contacts** | Support et Communication | Permet de contacter l’équipe Minerals via un formulaire. Fonction : formulaire `contact_form` avec validation. |
+| **À propos** | Présentation du Projet | Affiche la mission, valeurs, images illustratives et carte des boutiques intégrée (`st.map(df)`). |
  
+## 3. Fonctionnalités Utilitaires
 
-### 3. afficher_etoiles(spa_name)
+Afficher les étoiles (afficher_etoiles(spa_name)) : Affiche une note aléatoire (3 à 5 étoiles) pour chaque institut.
 
-Rôle : Affiche une notation aléatoire (3 à 5 étoiles) pour chaque institut de spa.
+Gestion du carrousel d’images : next_image_callback(key, n) et prev_image_callback(key, n) permettent de naviguer dans les images des instituts.
 
-Logique : Utilise st.session_state pour conserver la note entre les sessions Streamlit.
+Ajout d’événements (add_event(title, date)) : Ajoute des activités ou réservations dans le calendrier personnel de l’utilisateur, en évitant les doublons.
 
- ### 4.next_image_callback(key, n)
+## 4. Interface et Navigation
 
-Rôle : Fait défiler les images suivantes du carrousel de chaque institut.
+Multi-page : Navigation fluide entre Accueil, Connexion, Réservation et Espace Personnel via st.session_state.
 
-Logique : Incrémente l’index de l’image affichée dans st.session_state.
+Design Zen : CSS minimaliste et harmonieux (couleurs beige et marron).
 
-### 5. prev_image_callback(key, n)
+CGU : Acceptation obligatoire des Conditions Générales d’Utilisation avant accès à l’application.
 
-Rôle : Permet de revenir à l’image précédente du carrousel.
+## 5. Authentification et Gestion de Session
 
-Logique : Décrémente l’index de l’image affichée dans st.session_state.
+Formulaires dédiés pour connexion et création de compte.
 
-### 6. add_event(title, date)
+Déconnexion possible, réinitialisant les données de session.
 
-Rôle : Ajoute un événement (réservation ou activité) dans le calendrier personnalisé de l’utilisateur.
+## 6. Bilan Quotidien et Gamification
 
-Logique : Empêche les doublons d’événements et met à jour le score de bien-être en fonction du nombre d’activités.
+Score de bien-être dynamique : Calculé en fonction des actions accomplies, des réservations et des niveaux d’humeur/stress.
 
-### 7. Interface et Navigation
-Gestion Multi-Page : Utilisation de l'état de session (st.session_state) pour une navigation fluide entre l'Accueil, la Connexion, la Réservation et l'Espace Personnel, simulant une application web classique.
+To-Do List : Liste d’activités quotidiennes de bien-être qui contribuent au score.
 
-### 8.Design Personnalisé (Zen) : Injection de CSS pour appliquer un style visuel minimaliste et zen (couleurs Beige/Marron) pour une ambiance cohérente.
+Visualisation : Graphique de l’évolution du score et indicateurs de récompense mensuelle.
 
-Conformité CGU : Écran de démarrage obligatoire demandant l'Acceptation des Conditions Générales d’Utilisation (CGU) avant d'accéder à l'application.
+Encouragements : Messages et badges pour motiver la progression.
 
-### 9. Authentification et Accès
-Connexion / Inscription : Formulaires dédiés pour la connexion et la création de compte (logique simplifiée/simulée).
+## 7. Personnalisation et Utilitaire Social
 
-Gestion de Session : Fonctionnalité complète de déconnexion qui réinitialise l'état de la session utilisateur.
+Quiz de recommandation : Permet de déterminer le soin le plus adapté selon l’utilisateur.
 
+Récompenses et promotions : Déclenchées lorsque le score dépasse un seuil défini.
 
-### 10. Bilan Quotidien et Gamification
-Scoring de Bien-être Dynamique : Le score est calculé en temps réel en fonction des actions de l'utilisateur (tâches accomplies, réservations effectuées).
-
-To-Do List (Tâches Quotidiennes) : Liste d'activités de bien-être qui, une fois cochées, augmentent le score (mécanisme de gamification).
-
-Suivi Personnalisé : Des curseurs permettent l'enregistrement du niveau d'humeur et de stress, ces données contribuant également au score.
-
-Visualisation : Un graphique en ligne simule l'évolution du score de bien-être.
-
-### 11. Personnalisation et Utilitaire Social
-Quiz de Recommandation : Quiz interactif qui structure les questions pour générer une recommandation de soin personnalisé.
-
-Incitations et Évènements : Logique promotionnelle déclenchant des offres spéciales (ex: animation st.balloons et promotions) dès qu'un seuil de score est atteint.
-
-Persistance des Données : Les données utilisateur (réservations, bilans, etc.) sont enregistrées dans un fichier local (user_data.csv) via la fonction save_user_data_to_csv (simulée).
+Persistance des données : Les données des utilisateurs (réservations, bilans, scores) sont sauvegardées localement via CSV.
