@@ -5,7 +5,7 @@ import pandas as pd
 def put_score(email,score,date):
     print("dedans")
     COLUMNS = ['email', 'score', 'date']
-    filename = "donnees\score_data.csv"
+    filename = "score_data.csv"
     if os.path.exists(filename) and os.path.getsize(filename) > 0:
         df = pd.read_csv(filename)
     else:
@@ -53,3 +53,4 @@ def afficher_score(email):
     print(score_list)
     
     return score_list
+
